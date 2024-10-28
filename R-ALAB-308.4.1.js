@@ -86,3 +86,11 @@ for (const index in data) {
 let avg = total / data.length; // find average by dividing by total number of data
 console.log(avg); // print out average.
 
+
+
+// ======== Part 5: Full Circle ========
+let newCsv = '';
+data.forEach((obj) => {
+    newCsv += Object.values(obj).toString()+"\n";
+})
+console.log(newCsv);
