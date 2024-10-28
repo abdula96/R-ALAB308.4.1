@@ -1,25 +1,37 @@
 const CSV_STR = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 
-======== Part 1: Refactoring Old Code ========
- let word = '';
- let row = [];
+// ======== Part 1: Refactoring Old Code ========
+// let word = '';
+// let row = [];
 
- for (let i = 0; i < CSV_STR.length; i++) {
-    let ch = CSV_STR[i];
-     if (ch == "," || ch == "\n" || i === CSV_STR.length - 1){
-         row.push(word); // add to row
-         word = ''; // clear word
+// for (let i = 0; i < CSV_STR.length; i++) {
+//     let ch = CSV_STR[i];
+//     if (ch == "," || ch == "\n" || i === CSV_STR.length - 1){
+//         row.push(word); // add to row
+//         word = ''; // clear word
 
 //         // if it is new line or we are at the last character of the whole string,
-        // it is the end of the row.
-         if (ch == "\n" || i === CSV_STR.length - 1){
+//         // it is the end of the row.
+//         if (ch == "\n" || i === CSV_STR.length - 1){
 //             // print out the row
-             console.log(row.join(', '));
+//             console.log(row.join(', '));
 //             // clear row
-/            row = [];
-         }
-     }
-     else {
-         word += ch; // add character to word
-     }
- }
+//             row = [];
+//         }
+//     }
+//     else {
+//         word += ch; // add character to word
+//     }
+// }
+
+
+
+// ======== Part 2: Expanding Functionality ========
+// Changed to use split for simpler
+ data = [];
+ CSV_STR.split('\n').forEach((string) => {
+     data.push(string.split(','));
+ })
+ console.log(data);
+
+
